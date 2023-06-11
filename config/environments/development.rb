@@ -1,6 +1,10 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #今回は開発環境だからここに書いているけど、本番環境だったら別のファイルに似たような記述をする必要がある
+  #ユーザー登録を行う際に入力したメアド当てにメールを送って本登録をさせるという機能のために必要な記述
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time

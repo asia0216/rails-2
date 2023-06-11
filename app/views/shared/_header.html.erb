@@ -1,0 +1,22 @@
+<h3 class="header">header</h3>
+
+<!--↓ので現在ユーザー-->
+<% if current_user.present? %>
+<div class="container">
+  <nav>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+    <ul class="dropdown">
+      <li><%= link_to"施設の新規登録", "#" %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to"予約リスト", "#" %></li>
+      <li><%= link_to"登録リスト", "#" %></li>
+      <li><%= link_to"アカウント設定", "#" %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+  <!--この部分がヘッダーのドロップダウンメニューになる
+        意味わからん指定がたくさんあるけど、多分bootstrapで使われているやつだと思われる-->
+</div>
+
+<% end %>
